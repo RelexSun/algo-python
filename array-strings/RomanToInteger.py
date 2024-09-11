@@ -53,9 +53,26 @@ def romanToInt(s):
     }
     number = 0
     # IV should = 5-1 but just replace it with IIII so that its easier by sum
-    s = s.replace("IV", "IIII").replace("IX", "VIIII")
-    s = s.replace("XL", "XXXX").replace("XC", "LXXXX")
-    s = s.replace("CD", "CCCC").replace("CM", "DCCCC")
+    s = s.replace("IV", "IIII").replace("IX", "VIIII").replace("XL", "XXXX").replace("XC", "LXXXX").replace("CD", "CCCC").replace("CM", "DCCCC")
+
     for char in s:
         number += translations[char]
     return number
+
+print(romanToInt("III"))
+print(romanToInt("IV"))
+print(romanToInt("IX"))
+print(romanToInt("LVIII"))
+print(romanToInt("MCMXCIV"))
+
+'''
+    number = 0
+    n = len(s)
+
+    for i in range(n):
+        # If the current numeral is less than the next one, subtract it from the total
+        if i < n - 1 and translations[s[i]] < translations[s[i + 1]]:
+            number -= translations[s[i]]
+        else:
+            number += translations[s[i]]
+'''

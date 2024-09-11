@@ -33,8 +33,6 @@ merged: a p b q c   d
 
 
 def mergeAlternately(word1, word2):
-    word3 = ''
-    word4 = ''
     array = []
 
     if len(word1) > len(word2):
@@ -46,16 +44,16 @@ def mergeAlternately(word1, word2):
 
     last = abs(len(word1) - len(word2))
     if last > 0:
-        word5 = word4[-last:]
+        word5 = word4[-last:] # store the character from the longest word
     else:
         word5 = ''
 
-    for i in range(len(word3)):
+    for i in range(len(word3)): #length of the shortest word
         array.append(word1[i])
-
         array.append(word2[i])
+
     return "".join(array) + word5
 
 w1 = "abc"
-w2 = "pqr"
+w2 = "pqrlw"
 print(mergeAlternately(w1, w2))
