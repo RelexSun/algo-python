@@ -31,6 +31,7 @@ def containsDuplicate(nums):
 
 print(containsDuplicate([1,1,1,3,3,4,3,2,4,2]))
 
+# Time - O(n)
 '''
 nums = [1,1,1,3,3,4,3,2,4,2]
 print(set(nums))
